@@ -1,0 +1,449 @@
+%-----------------------------------------------------------------------------------------------------------------------------------------------%
+%	The MIT License (MIT)
+%
+%	Copyright (c) 2015 Jan Küster
+%
+%	Permission is hereby granted, free of charge, to any person obtaining a copy
+%	of this software and associated documentation files (the "Software"), to deal
+%	in the Software without restriction, including without limitation the rights
+%	to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+%	copies of the Software, and to permit persons to whom the Software is
+%	furnished to do so, subject to the following conditions:
+%	
+%	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+%	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+%	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+%	AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+%	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+%	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+%	THE SOFTWARE.
+%	
+%
+%-----------------------------------------------------------------------------------------------------------------------------------------------%
+
+
+%============================================================================%
+%
+%	DOCUMENT DEFINITION
+%
+%============================================================================%
+
+%we use article class because we want to fully customize the page and dont use a cv template
+\documentclass[10pt,A4]{article}	
+
+
+%----------------------------------------------------------------------------------------
+%	ENCODING
+%----------------------------------------------------------------------------------------
+
+%we use utf8 since we want to build from any machine
+\usepackage[utf8]{inputenc}		
+
+%----------------------------------------------------------------------------------------
+%	LOGIC
+%----------------------------------------------------------------------------------------
+
+% provides \isempty test
+\usepackage{xifthen}
+
+%----------------------------------------------------------------------------------------
+%	FONT
+%----------------------------------------------------------------------------------------
+
+% some tex-live fonts - choose your own
+
+%\usepackage[defaultsans]{droidsans}
+%\usepackage[default]{comfortaa}
+%\usepackage{cmbright}
+\usepackage[default]{raleway}
+%\usepackage{fetamont}
+%\usepackage[default]{gillius}
+%\usepackage[light,math]{iwona}
+%\usepackage[thin]{roboto} 
+
+% set font default
+\renewcommand*\familydefault{\sfdefault} 	
+\usepackage[T1]{fontenc}
+
+% more font size definitions
+\usepackage{moresize}		
+
+
+%----------------------------------------------------------------------------------------
+%	PAGE LAYOUT  DEFINITIONS
+%----------------------------------------------------------------------------------------
+
+%debug page outer frames
+%\usepackage{showframe}			
+
+
+%define page styles using geometry
+\usepackage[a4paper]{geometry}		
+
+% for example, change the margins to 2 inches all round
+\geometry{top=1.75cm, bottom=-.6cm, left=1.5cm, right=1.5cm} 	
+
+%use customized header
+\usepackage{fancyhdr}				
+\pagestyle{fancy}
+
+%less space between header and content
+\setlength{\headheight}{-5pt}		
+
+
+%customize entries left, center and right
+%\lhead{}
+%\chead{ \small{Jan Küster  $\cdot$ Consultant and Software Engineer $\cdot$  Bremen, Germany  $\cdot$  \textcolor{sectcol}{\textbf{info@jankuester.com}}  $\cdot$ +49 176 *** *** **}}
+%\rhead{}
+
+
+%indentation is zero
+\setlength{\parindent}{0mm}
+
+%----------------------------------------------------------------------------------------
+%	TABLE /ARRAY DEFINITIONS
+%---------------------------------------------------------------------------------------- 
+
+%for layouting tables
+\usepackage{multicol}			
+\usepackage{multirow}
+
+%extended aligning of tabular cells
+\usepackage{array}
+
+\newcolumntype{x}[1]{%
+>{\raggedleft\hspace{0pt}}p{#1}}%
+
+
+%----------------------------------------------------------------------------------------
+%	GRAPHICS DEFINITIONS
+%------------------------------------- --------------------------------------------------- 
+
+%for header image
+\usepackage{graphicx}
+
+%for floating figures
+\usepackage{wrapfig}
+\usepackage{float}
+%\floatstyle{boxed} 
+%\restylefloat{figure}
+
+%for drawing graphics		
+\usepackage{tikz}				
+\usetikzlibrary{shapes, backgrounds,mindmap, trees}
+
+
+%----------------------------------------------------------------------------------------
+%	Color DEFINITIONS
+%---------------------------------------------------------------------------------------- 
+\usepackage{color}
+
+%accent color
+\definecolor{bgcol}{RGB}{45,48,53}
+%dark background color
+\definecolor{sectcol}{RGB}{142,45,38}
+
+%light background / accent color
+\definecolor{softcol}{RGB}{225,225,225}
+
+%light background / accent color
+\definecolor{darkcol}{RGB}{0,0,0}
+
+%============================================================================%
+%
+%
+%	DEFINITIONS
+%
+%
+%============================================================================%
+
+%----------------------------------------------------------------------------------------
+% 	HEADER
+%----------------------------------------------------------------------------------------
+
+% remove top header line
+\renewcommand{\headrulewidth}{0pt} 
+
+%remove botttom header line
+\renewcommand{\footrulewidth}{0pt}	  	
+
+%remove pagenum
+\renewcommand{\thepage}{}	
+
+%remove section num		
+\renewcommand{\thesection}{}			
+
+%----------------------------------------------------------------------------------------
+% 	ARROW GRAPHICS in Tikz
+%----------------------------------------------------------------------------------------
+
+% a six pointed arrow poiting to the left
+\newcommand{\tzlarrow}{(0,0) -- (0.2,0) -- (0.3,0.2) -- (0.2,0.4) -- (0,0.4) -- (0.1,0.2) -- cycle;}	
+
+% include the left arrow into a tikz picture
+% param1: fill color
+%
+\newcommand{\larrow}[1]
+{\begin{tikzpicture}[scale=0.58]
+	 \filldraw[fill=#1!100,draw=#1!100!black]  \tzlarrow
+ \end{tikzpicture}
+}
+
+% a six pointed arrow poiting to the right
+\newcommand{\tzrarrow}{ (0,0.2) -- (0.1,0) -- (0.3,0) -- (0.2,0.2) -- (0.3,0.4) -- (0.1,0.4) -- cycle;}
+
+% include the right arrow into a tikz picture
+% param1: fill color
+%
+\newcommand{\rarrow}
+{\begin{tikzpicture}[scale=0.7]
+	\filldraw[fill=sectcol!100,draw=sectcol!100!black] \tzrarrow
+ \end{tikzpicture}
+}
+
+
+
+%----------------------------------------------------------------------------------------
+%	custom sections
+%----------------------------------------------------------------------------------------
+
+% create a coloured box with arrow and title as cv section headline
+% param 1: section title
+%
+\newcommand{\cvsection}[1]
+{
+\colorbox{bgcol}{\mystrut \makebox[1\linewidth][l]{
+\larrow{sectcol} \hspace{-8pt} \larrow{sectcol} \hspace{-8pt} \larrow{sectcol} \textcolor{white}{\textbf{#1}}\hspace{4pt}
+}}\\
+}
+
+%create a coloured arrow with title as cv meta section section
+% param 1: meta section title
+%
+\newcommand{\metasection}[2]
+{
+\begin{tabular*}{1\textwidth}{p{2.7cm} p{11cm}}
+\larrow{bgcol}	\normalsize{\textcolor{sectcol}{#1}}&#2\\[12pt]
+\end{tabular*}
+}
+
+%----------------------------------------------------------------------------------------
+%	 CV EVENT
+%----------------------------------------------------------------------------------------
+
+% creates a stretched box as cv entry headline followed by two paragraphs about 
+% the work you did
+% param 1:	event time i.e. 2014 or 2011-2014 etc.
+% param 2:	event name (what did you do?)
+% param 3:	institution (where did you work / study)
+% param 4:	what was your position
+% param 5:	some words about your contributions
+%
+\newcommand{\cvevent}[5]
+{
+\vspace{8pt}
+	\begin{tabular*}{1\textwidth}{p{3.3cm} p{9.8cm} x{3.9cm}}
+ \textcolor{bgcol}{#1}& \textbf{#2} & \vspace{2.5pt}\textcolor{sectcol}{#3}
+
+	\end{tabular*}
+\vspace{-12pt}
+\textcolor{softcol}{\hrule}
+\vspace{6pt}
+	\begin{tabular*}{1\textwidth}{p{1.3cm} p{15.4cm}}
+&		 \larrow{bgcol} #4\\[3pt]
+	\end{tabular*}
+
+}
+
+
+\newcommand{\cvevento}[3]
+{
+	\vspace{8pt}
+	\begin{tabular*}{1\textwidth}{p{3.3cm} p{9.8cm} x{3.9cm}}
+		\textcolor{bgcol}{#1}& \textbf{#2} & \vspace{2.5pt}\textcolor{sectcol}{#3}
+		
+	\end{tabular*}
+	\vspace{-12pt}
+	\textcolor{softcol}{\hrule}
+}
+% creates a stretched box as 
+\newcommand{\cveventmeta}[2]
+{
+	\mbox{\mystrut \hspace{87pt}\textit{#1}}\\
+	#2
+}
+
+%----------------------------------------------------------------------------------------
+% CUSTOM STRUT FOR EMPTY BOXES
+%----------------------------------------- -----------------------------------------------
+\newcommand{\mystrut}{\rule[-.3\baselineskip]{0pt}{\baselineskip}}
+
+%----------------------------------------------------------------------------------------
+% CUSTOM LOREM IPSUM
+%----------------------------------------------------------------------------------------
+\newcommand{\lorem}
+{Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus.}
+
+
+
+%============================================================================%
+%
+%
+%
+%	DOCUMENT CONTENT
+%
+%
+%
+%============================================================================%
+\begin{document}
+
+
+%use our custom fancy header definitions
+\pagestyle{fancy}	
+
+
+%---------------------------------------------------------------------------------------
+%	TITLE HEADLINE
+%----------------------------------------------------------------------------------------
+\vspace{-20.55pt}
+
+% use this for multiple words like working titles etc.
+%\hspace{-0.25\linewidth}\colorbox{bgcol}{\makebox[1.5\linewidth][c]{\hspace{46pt}\HUGE{\textcolor{white}{\textsc{Jan Küster}} } \textcolor{sectcol}{\rule[-1mm]{1mm}{0.9cm}} \parbox[b]{5cm}{   \large{ \textcolor{white}{{IT Consultant}}}\\
+% \large{ \textcolor{white}{{Resume}}}}
+%}}
+
+% use this for single words, e.g. CV or RESUME etc.
+\hspace{-0.25\linewidth}\colorbox{bgcol}{\makebox[1.5\linewidth][c]{\HUGE{\textcolor{white}{\textsc{RABİA DOĞAN}} } \textcolor{sectcol}{\rule[-1mm]{1mm}{0.9cm}} \HUGE{\textcolor{white}{\textsc{}} } }}
+
+
+%----------------------------------------------------------------------------------------
+%	HEADER IMAGE
+%----------------------------------------------------------------------------------------
+\vspace{10pt}
+\begin{figure}[H]
+\hspace{0.8\linewidth}
+	\includegraphics[width=0.25\linewidth]{cv.jpg}	%trimming relative to image size!
+\end{figure}
+
+%---------------------------------------------------------------------------------------
+%	QR CODE (optional)
+%----------------------------------------------------------------------------------------
+%\vspace{-136pt}
+%\hspace{0.75\linewidth}
+%\includegraphics[width=103pt]{qrcode}
+%\normalsize
+%\vspace{88pt}
+
+%---------------------------------------------------------------------------------------
+%	META SECTION
+%----------------------------------------------------------------------------------------
+
+\vspace{-130pt}
+\metasection{Tel:}{+90 (536) 701 50 98 }
+\metasection{E-posta:}{rabia.dogan@ceng.deu.edu.tr} 
+\metasection{Adres:}{Kuruçeşme Mahallesi 203/33 Sokak No:10 Daire:5 İzmir/Buca}
+\metasection{Doğum Tarihi:}{06/06/1998}
+\metasection{Diller}{İngilizce}
+\metasection{Topluluklar}{Deu Robot Topluluğu, EGİAD Gençlik Komisyonu,Yaren Kooperatif, Vehbi Koç Vakfı}
+\metasection{Hobiler}{Kitap Okumak, Müzik Dinlemek, Elektronik Projeler, Dağ yürüyüşleri}
+
+
+%---------------------------------------------------------------------------------------
+%	SUMMARAY (optional)
+%----------------------------------------------------------------------------------------
+
+\cvsection{Hakkımda}\\
+ Lisans eğitimi aldığım dönemde hem kendimi sosyal hem kültürel hem de tekniki açıdan geliştirmekle geçirdim. Hiç bitmek bilmeyen merak duygum beni her zaman bir adım daha ileriye götürdü. Bir çok toplulukta yer almakla beraber edindiğim sorumluluklar son 1 yıldır aktif olarak yer aldığım yarı zamanlı çalışma serüvenimle gitgide katlandı. Yazılıma olan ilgim gün geçtikçe arttı. Gömülü sistemler hayatın her bir parçasına çok iyi oturduğunu düşündüğüm için merakım ve ilgi odağım zamanla bu yöne kaydı. Çözüm odaklı bakış açım, ekip içi çalışma düzenim ve uyumum sayesinde baş edemeyeceğim problem olmayacağını düşünüyorum. Gelişime her daim açık ve aç olacağımdan eminim. 
+\\[-2pt]
+
+%============================================================================%
+%
+%	CV SECTIONS AND EVENTS (MAIN CONTENT)
+%
+%============================================================================%
+
+%---------------------------------------------------------------------------------------
+%	EXPERIENCE
+%----------------------------------------------------------------------------------------
+\cvsection{Deneyimler}
+
+%
+\cvevent{2020-Devam Ediyor}{Yazılım Mühendisi}{Nucleo Ar-Ge}{Yarı Zamanlı olarak Nucleo firması adına Vestel Elektronik Yenilikçi Teknolojiler alt grubunda gömülü yazılım mühendisi olarak Görev almaktayım. Ayrıca grupiçi proje yazımlarında da görev almaktayım.}
+
+\cvevent{2019/08}{Stajyer}{TUBİTAK UME}{Empedans Laboratuvarında Yaz dönemi stajımı tamamladım.Staj dönemim boyunca İndüktif gerilim bölücü tasarladım. Ayrıca Üzerinde çalıştıkları Avrupa projesinde Wheatstone  Köprüsü ile tasarladıkları sistemin yazılımsal optimizasyonu üzerinde çalıştım.}
+
+\cvevent{2017-2019}{Garson}{Mihenk Düğün\&Davet Organizasyon}{Yaz aylarında İzmir'de bulunan bazı düğün salonlarında Garson Şefi ve Garson Olarak Çalıştım.}
+
+%\textcolor{softcol}{\hrule}
+
+%---------------------------------------------------------------------------------------
+%	EDUCATION SECTION
+%--------------------------------------------------------------------------------------
+\cvsection{Akademik Hayatı}
+%
+
+\cvevent{2016 - 2021}{Elektrik-Elektronik Mühendisliği}{Dokuz Eylül Üniversitesi}{Not Ortalaması:3.0/4.0}
+
+\cvevent{2012-2016}{Adana Ticaret Odası Anadolu Lisesi}{}{Not Ortalaması:91.93/100.0}
+
+%\textcolor{softcol}{\hrule}
+
+\cvsection{Yetenekler}
+
+\textbf{Proglamlama Dilleri}\\
+C, Python\\
+\textbf{Bilgisayar Programları}\\
+MATLAB, Octave, LabVIEW, Quite Universal Circuit Simulator (QUCS), Kicad, Ltspice, Intel Artera Quartus, Mentor Graphics Xpedition,Git,Latex\\
+\textbf{Mikro Denetleyiciler}\\
+Raspberry Pi, STM32 Series, STM8 Series, TI MSP430 Series, TI CC13xx and CC26xx, TI CC2640, TI AM335x\\
+
+
+%-------------------------------------------------------------------------------------------------
+%	ARTIFICIAL FOOTER (fancy footer cannot exceed linewidth) 
+%--------------------------------------------------------------------------------------------------
+%---------------------------------------------------------------------------------------
+%Project SECTION
+%--------------------------------------------------------------------------------------
+\cvsection{Projeler \& Etkinlikler}
+
+\cvevent{2021}{TEYDEB-Akıllı Ayna Jest Algılama}{Vestel Elektronik}{Vestel tarafından yürütülen projede, Gömülü yazılım kısmıyla ilgilenmekteyim. Proje özelinde akıllı aynalarda jest tanıma özelliği kazandırmaktır. Mahramiyetin ön planda tutulduğu projede bir adet termopil Dizi sensörü kullanılmaktadır. Sensörden data almak, datayı işlemek, Sensör ile akıllı ayna entegrasyonu gibi şeyler üzeirne çalışmaktayım.}
+
+\cvevent{2020}{Covid Tracker}{Vestel Elektronik}{IOT tabanlı bir projedir. Proje içeriği, Covid-19 kapsamında Vestel City çalışanlarının güvenliğini sağlamak için bir Akıllı takip sistemidir. TI CC26xx serisinden bir kart kullanılarak Rtos işletim sistemi alt yapısına sahip cihazların birbirine 1.5 metreden daha yakın olmalı durumunda her cihazın kendine ait veritabanına diğer cihazları işlemesi böylece hasta bireyle temaslı olan bireylerinde karantinaya alınarak vaka sayılarının azalmasını sağlamaktır.}{}
+\cvevent{2020}{İş Gençlik'te Girişimcilik Projesi}{İZİKAD}{Womengineer ekibi olarak katıldığımız yarışma için hedefimiz üniversiteye hazırlanan kız öğrencilere yönelik mentor - menti mobil uygulaması geliştirmek ve çalışan mühendis kadınları ve mühendislik okuyan kız öğrencileri lisedeki arkadaşlarımızla bir araya getirmek hedefi taşımaktadır. Rol model edinmelerine ve kendilerine daha fazla güvenmelerine bir ışık olmak umuduyla...}
+
+\cvevent{2020}{Kodlama Alt Birimi Etkinlik Sorumlusu}{Yaren Kooperatif}{Yaren Kooperatif projesi olan 9-13 yaş arası çocuklara kodlamayı
+	sevdirmek ve bu alana olan bilgilerine ve ilgilerine katkı sağlamak amacıyla kadın rol model olarak katıldığım algoritma ve kodlamanın temelini oluşturmayı hedeflediğim gönüllülük çalışmasıdır.}
+
+\cvevent{2019}{}{DEU Robot Topluluğu}{}{}
+%--------------------------
+%Project SECTION
+%--------------------------------------------------------------------------------------
+\cvsection{Sertifikalar \& Ödüller}
+
+\cvevento{2020}{İZİKAD-İş Gençlik'te Yarışması}{Mansiyon Ödülü}{}{}
+
+\cvevento{2019}{IZTECH-Fikir Yarışması}{2.'lik Ödülü}{}{}
+
+\cvevento{2018}{Diksiyon ve Hitabet Sertifikası}{..}
+
+%\cvevento{2018}{Diksiyon ve Hitabet Sertifikası}{..}
+
+\cvevento{2016}{İşaret Dili Sertifikası}{}
+\vspace{280pt}
+\null
+%\vspace*{\fill}
+\hspace{-0.25\linewidth}\colorbox{bgcol}{\makebox[1.5\linewidth][c]{\mystrut \small \textcolor{white}{www.jankuester.com} $\cdot$ \textcolor{white}{github.com/jankapunkt}}}
+
+
+
+
+%============================================================================%
+%
+%
+%
+%	DOCUMENT END
+%
+%
+%
+%============================================================================%
+\end{document}

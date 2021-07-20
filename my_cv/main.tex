@@ -49,7 +49,7 @@
 %----------------------------------------------------------------------------------------
 %	FONT
 %----------------------------------------------------------------------------------------
-
+\usepackage{hyperref}%linkleme
 % some tex-live fonts - choose your own
 
 %\usepackage[defaultsans]{droidsans}
@@ -112,7 +112,7 @@
 \usepackage{array}
 
 \newcolumntype{x}[1]{%
->{\raggedleft\hspace{0pt}}p{#1}}%
+	>{\raggedleft\hspace{0pt}}p{#1}}%
 
 
 %----------------------------------------------------------------------------------------
@@ -242,7 +242,7 @@
 \newcommand{\cvevent}[5]
 {
 \vspace{8pt}
-	\begin{tabular*}{1\textwidth}{p{3.3cm} p{9.8cm} x{3.9cm}}
+	\begin{tabular*}{1\textwidth}{p{3.3cm} p{6.9cm} x{6.5cm}}
  \textcolor{bgcol}{#1}& \textbf{#2} & \vspace{2.5pt}\textcolor{sectcol}{#3}
 
 	\end{tabular*}
@@ -254,12 +254,28 @@
 	\end{tabular*}
 
 }
+\newcommand{\cveventi}[5]
+{
+	\vspace{8pt}
+	\begin{tabular*}{1\textwidth}{p{3.3cm} p{9.8cm} x{3.9cm}}
+		\textcolor{bgcol}{#1}& \textbf{#2} & \vspace{2.5pt}\textcolor{sectcol}{#3}
+		
+	\end{tabular*}
+	\vspace{-12pt}
+	\textcolor{softcol}{\hrule}
+	\vspace{6pt}
+	\begin{tabular*}{1\textwidth}{p{1.3cm} p{15.4cm}}
+		&		 \larrow{bgcol} #4\\[3pt]
+		&          \larrow{bgcol} #5\\[3pt]
+	\end{tabular*}
+	
+}
 
 
 \newcommand{\cvevento}[3]
 {
 	\vspace{8pt}
-	\begin{tabular*}{1\textwidth}{p{3.3cm} p{9.8cm} x{3.9cm}}
+	\begin{tabular*}{1\textwidth}{p{3.3cm} p{9.3cm} x{3.9cm}}
 		\textcolor{bgcol}{#1}& \textbf{#2} & \vspace{2.5pt}\textcolor{sectcol}{#3}
 		
 	\end{tabular*}
@@ -353,7 +369,7 @@
 %----------------------------------------------------------------------------------------
 
 \cvsection{Hakkımda}\\
- Lisans eğitimi aldığım dönemde hem kendimi sosyal hem kültürel hem de tekniki açıdan geliştirmekle geçirdim. Hiç bitmek bilmeyen merak duygum beni her zaman bir adım daha ileriye götürdü. Bir çok toplulukta yer almakla beraber edindiğim sorumluluklar son 1 yıldır aktif olarak yer aldığım yarı zamanlı çalışma serüvenimle gitgide katlandı. Yazılıma olan ilgim gün geçtikçe arttı. Gömülü sistemler hayatın her bir parçasına çok iyi oturduğunu düşündüğüm için merakım ve ilgi odağım zamanla bu yöne kaydı. Çözüm odaklı bakış açım, ekip içi çalışma düzenim ve uyumum sayesinde baş edemeyeceğim problem olmayacağını düşünüyorum. Gelişime her daim açık ve aç olacağımdan eminim. 
+ Lisans eğitimi aldığım dönem boyunca kendimi hem sosyal hem teknik açıdan geliştirdim. Hiç bitmek bilmeyen merak duygum beni her zaman bir adım daha ileriye götürdü. Bir çok toplulukta yer almakla beraber edindiğim sorumluluklar son 1 yıldır aktif olarak yer aldığım yarı zamanlı çalışma serüvenimle gitgide katlandı. Yazılıma olan ilgim gün geçtikçe arttı. Gömülü sistemler hayatın her bir parçasına çok iyi oturduğunu düşündüğüm için merakım ve ilgi odağım zamanla bu yöne kaydı. Çözüm odaklı bakış açım, ekip içi çalışma düzenim ve uyumum sayesinde baş edemeyeceğim problem olmayacağını düşünüyorum. Gelişime her daim açık ve aç olacağımdan eminim. 
 \\[-2pt]
 
 %============================================================================%
@@ -368,12 +384,13 @@
 \cvsection{Deneyimler}
 
 %
-\cvevent{2020-Devam Ediyor}{Yazılım Mühendisi}{Nucleo Ar-Ge}{Yarı Zamanlı olarak Nucleo firması adına Vestel Elektronik Yenilikçi Teknolojiler alt grubunda gömülü yazılım mühendisi olarak Görev almaktayım. Ayrıca grupiçi proje yazımlarında da görev almaktayım.}
+\cvevent{2020-Devam Ediyor}{Yazılım Mühendisi}{Nucleo Ar-Ge}{Yarı Zamanlı olarak Nucleo firması adına Vestel Elektronik Yenilikçi Teknolojiler alt grubunda gömülü yazılım mühendisi olarak görev almaktayım. Ayrıca grupiçi proje yazımlarında da görev almaktayım.}
 
-\cvevent{2019/08}{Stajyer}{TUBİTAK UME}{Empedans Laboratuvarında Yaz dönemi stajımı tamamladım.Staj dönemim boyunca İndüktif gerilim bölücü tasarladım. Ayrıca Üzerinde çalıştıkları Avrupa projesinde Wheatstone  Köprüsü ile tasarladıkları sistemin yazılımsal optimizasyonu üzerinde çalıştım.}
+\cvevent{2019/08}{Stajyer}{TUBİTAK UME}{Empedans Laboratuvarında yaz dönemi stajımı tamamladım. Staj dönemim boyunca indüktif gerilim bölücü tasarladım. Ayrıca Üzerinde çalıştıkları Avrupa projesinde Wheatstone  Köprüsü ile tasarladıkları sistemin yazılımsal optimizasyonu üzerinde çalıştım.}
 
-\cvevent{2017-2019}{Garson}{Mihenk Düğün\&Davet Organizasyon}{Yaz aylarında İzmir'de bulunan bazı düğün salonlarında Garson Şefi ve Garson Olarak Çalıştım.}
+\cvevent{2017-2019}{Garson}{Mihenk Düğün\&Davet Organizasyon}{Yaz aylarında İzmir'de bulunan bazı düğün salonlarında Garson Şefi ve Garson olarak Çalıştım.}
 
+\vspace{5pt}
 %\textcolor{softcol}{\hrule}
 
 %---------------------------------------------------------------------------------------
@@ -382,9 +399,11 @@
 \cvsection{Akademik Hayatı}
 %
 
-\cvevent{2016 - 2021}{Elektrik-Elektronik Mühendisliği}{Dokuz Eylül Üniversitesi}{Not Ortalaması:3.0/4.0}
+\cvevent{2016 - 2021}{Dokuz Eylül Üniversitesi}{Elektrik-Elektronik Mühendisliği}{Not Ortalaması:2.94/4.0}
 
 \cvevent{2012-2016}{Adana Ticaret Odası Anadolu Lisesi}{}{Not Ortalaması:91.93/100.0}
+
+\vspace{5pt}
 
 %\textcolor{softcol}{\hrule}
 
@@ -396,7 +415,7 @@ C, Python\\
 MATLAB, Octave, LabVIEW, Quite Universal Circuit Simulator (QUCS), Kicad, Ltspice, Intel Artera Quartus, Mentor Graphics Xpedition,Git,Latex\\
 \textbf{Mikro Denetleyiciler}\\
 Raspberry Pi, STM32 Series, STM8 Series, TI MSP430 Series, TI CC13xx and CC26xx, TI CC2640, TI AM335x\\
-
+\vspace{5pt}
 
 %-------------------------------------------------------------------------------------------------
 %	ARTIFICIAL FOOTER (fancy footer cannot exceed linewidth) 
@@ -406,16 +425,16 @@ Raspberry Pi, STM32 Series, STM8 Series, TI MSP430 Series, TI CC13xx and CC26xx,
 %--------------------------------------------------------------------------------------
 \cvsection{Projeler \& Etkinlikler}
 
-\cvevent{2021}{TEYDEB-Akıllı Ayna Jest Algılama}{Vestel Elektronik}{Vestel tarafından yürütülen projede, Gömülü yazılım kısmıyla ilgilenmekteyim. Proje özelinde akıllı aynalarda jest tanıma özelliği kazandırmaktır. Mahramiyetin ön planda tutulduğu projede bir adet termopil Dizi sensörü kullanılmaktadır. Sensörden data almak, datayı işlemek, Sensör ile akıllı ayna entegrasyonu gibi şeyler üzeirne çalışmaktayım.}
+\cvevent{2021}{TEYDEB-Akıllı Ayna Jest Algılama}{Vestel Elektronik}{Projenin amacı akıllı aynalara jest tanıma özelliği kazandırmaktır.}
 
-\cvevent{2020}{Covid Tracker}{Vestel Elektronik}{IOT tabanlı bir projedir. Proje içeriği, Covid-19 kapsamında Vestel City çalışanlarının güvenliğini sağlamak için bir Akıllı takip sistemidir. TI CC26xx serisinden bir kart kullanılarak Rtos işletim sistemi alt yapısına sahip cihazların birbirine 1.5 metreden daha yakın olmalı durumunda her cihazın kendine ait veritabanına diğer cihazları işlemesi böylece hasta bireyle temaslı olan bireylerinde karantinaya alınarak vaka sayılarının azalmasını sağlamaktır.}{}
-\cvevent{2020}{İş Gençlik'te Girişimcilik Projesi}{İZİKAD}{Womengineer ekibi olarak katıldığımız yarışma için hedefimiz üniversiteye hazırlanan kız öğrencilere yönelik mentor - menti mobil uygulaması geliştirmek ve çalışan mühendis kadınları ve mühendislik okuyan kız öğrencileri lisedeki arkadaşlarımızla bir araya getirmek hedefi taşımaktadır. Rol model edinmelerine ve kendilerine daha fazla güvenmelerine bir ışık olmak umuduyla...}
+\cvevent{2020}{Covid Tracker}{Vestel Elektronik}{Projenin amacı, Covid-19 kapsamında Vestel City çalışanlarının güvenliğini sağlamak için bir akıllı takip sisteminin tasarlanmasıdır.}{}
+\cvevent{2020}{İş Gençlik'te Girişimcilik Projesi}{İZİKAD}{ Hedefimiz üniversiteye hazırlanan kız öğrencilere yönelik mentor - menti mobil uygulaması geliştirmek ve çalışan mühendis kadınları ve mühendislik okuyan kadın öğrencileri lisedeki arkadaşlarımızla bir araya getirmek hedefi taşımaktadır.}
 
-\cvevent{2020}{Kodlama Alt Birimi Etkinlik Sorumlusu}{Yaren Kooperatif}{Yaren Kooperatif projesi olan 9-13 yaş arası çocuklara kodlamayı
-	sevdirmek ve bu alana olan bilgilerine ve ilgilerine katkı sağlamak amacıyla kadın rol model olarak katıldığım algoritma ve kodlamanın temelini oluşturmayı hedeflediğim gönüllülük çalışmasıdır.}
+\cvevent{2020}{Kodlama Alt Birimi Etkinlik Sorumlusu}{Yaren Kooperatif}{9-13 yaş arası çocuklara kodlamayı aşılamak amacıyla yapılmış sosyal sorumluluk projesidir.}
 
-\cvevent{2019}{DEU Robot Topluluğu}{}{Renesas MCU Rally Takım liderliği,Topluluk Denetim Kurulu Başkanlığı, Topluluk Yönetim Kurulu Üyeliği gibi görevlerde yer aldım.}
+\cvevent{2019}{Topluluk Görevlisi}{DEU Robot Topluluğu}{Renesas MCU Rally Takım liderliği, Topluluk Denetim Kurulu Başkanlığı, Topluluk Yönetim Kurulu Üyeliği gibi görevlerde yer aldım.}{}
 
+\vspace{5pt}
 %--------------------------
 %Project SECTION
 %--------------------------------------------------------------------------------------
@@ -432,11 +451,16 @@ Raspberry Pi, STM32 Series, STM8 Series, TI MSP430 Series, TI CC13xx and CC26xx,
 %\cvevento{2018}{Diksiyon ve Hitabet Sertifikası}{..}
 
 \cvevento{2016}{İşaret Dili Sertifikası}{}
-\vspace{280pt}
-\null
-%\vspace*{\fill}
-\hspace{-0.25\linewidth}\colorbox{bgcol}{\makebox[1.5\linewidth][c]{\mystrut \small \textcolor{white}{www.jankuester.com} $\cdot$ \textcolor{white}{github.com/jankapunkt}}}
+\cvsection{Referanslar}
 
+\cveventi{Barbaros KİRİŞKEN}{Vestel Elektronik-Yenilikçi Teknolojiler Ekip Müdürü}{}{Tel: +90 236 233 01 31}{E-posta: barbaros.kirisken@vestel.com.tr}
+\cveventi{Gülay GÜLMEZ}{TÜBİTAK UME'de Araştırmacı}{}{Tel: +90(507) 486 04 97}{E-posta: gulay.gulmez@tubitak.gov.tr}
+\cveventi{Enis TURHAN}{TÜBİTAK UME'de Araştırmacı}{}{Tel: +90(532) 300 68 48}{E-posta: enis.turhan@tubitak.gov.tr}
+\cveventi{Özgür TAMER}{Dokuz Eylül Üniversitesi-Dr. Öğr. Üyesi}{}{Tel: +90 232 301 71 82}{E-posta: ozgur.tamer@deu.edu.tr}
+\null
+\vspace{77pt}
+%\vspace*{\fill}
+\hspace{-0.25\linewidth}\colorbox{bgcol}{\makebox[1.5\linewidth][c]{\mystrut \small \textcolor{white}{\href{https://www.linkedin.com/in/rabia-dogan-965439155/}{LinkedIn}} $\cdot$ \textcolor{white}{\href{https://github.com/rabikkk}{Github}}}}
 
 
 

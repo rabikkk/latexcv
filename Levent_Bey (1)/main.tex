@@ -139,9 +139,9 @@
 \usepackage{color}
 
 %accent color
-\definecolor{bgcol}{RGB}{45,48,53}
+\definecolor{bgcol}{RGB}{0,0,0}
 %dark background color
-\definecolor{sectcol}{RGB}{142,45,38}
+\definecolor{sectcol}{RGB}{0,0,140}
 
 %light background / accent color
 \definecolor{softcol}{RGB}{225,225,225}
@@ -242,11 +242,11 @@
 \newcommand{\cvevent}[5]
 {
 \vspace{8pt}
-	\begin{tabular*}{1\textwidth}{p{3.3cm} p{6.9cm} x{6.5cm}}
- \textcolor{bgcol}{#1}& \textbf{#2} & \vspace{2.5pt}\textcolor{sectcol}{#3}
+	\begin{tabular*}{1\textwidth}{p{3.3cm} p{11.9cm} x{9.5cm}}
+ \textcolor{bgcol}{#1}& \textbf{#2} & \vspace{3.5pt}\textcolor{sectcol}{#3}
 
 	\end{tabular*}
-\vspace{-12pt}
+\vspace{-2pt}
 \textcolor{softcol}{\hrule}
 \vspace{6pt}
 	\begin{tabular*}{1\textwidth}{p{1.3cm} p{15.4cm}}
@@ -254,10 +254,25 @@
 	\end{tabular*}
 
 }
+\newcommand{\patent}[5]
+{
+	\vspace{8pt}
+	\begin{tabular*}{1\textwidth}{p{1.3cm} p{11.9cm} x{9.5cm}}
+		\textcolor{bgcol}{#1}& \textbf{#2} & \vspace{3.5pt}\textcolor{sectcol}{#3}
+		
+	\end{tabular*}
+	\vspace{-2pt}
+	\textcolor{softcol}{\hrule}
+	\vspace{6pt}
+	\begin{tabular*}{1\textwidth}{p{1.3cm} p{15.4cm}}
+		&		 \larrow{bgcol} #4\\[3pt]
+	\end{tabular*}
+	
+}
 \newcommand{\cveventi}[5]
 {
 	\vspace{8pt}
-	\begin{tabular*}{1\textwidth}{p{3.3cm} p{9.8cm} x{3.9cm}}
+	\begin{tabular*}{1\textwidth}{p{3.3cm} p{20.8cm} x{3.9cm}}
 		\textcolor{bgcol}{#1}& \textbf{#2} & \vspace{2.5pt}\textcolor{sectcol}{#3}
 		
 	\end{tabular*}
@@ -329,7 +344,7 @@
 %}}
 
 % use this for single words, e.g. CV or RESUME etc.
-\hspace{-0.25\linewidth}\colorbox{bgcol}{\makebox[1.5\linewidth][c]{\HUGE{\textcolor{white}{\textsc{RABİA DOĞAN}} } \HUGE{\textcolor{white}{\textsc{}} } }}
+\hspace{-0.25\linewidth}\colorbox{bgcol}{\makebox[1.5\linewidth][c]{\HUGE{\textcolor{white}{\textsc{LEVENT TÜZÜN}} } \HUGE{\textcolor{white}{\textsc{}} } }}
 
 
 %----------------------------------------------------------------------------------------
@@ -337,8 +352,8 @@
 %----------------------------------------------------------------------------------------
 \vspace{10pt}
 \begin{figure}[H]
-\hspace{0.8\linewidth}
-	\includegraphics[width=0.25\linewidth]{cv.jpg}	%trimming relative to image size!
+\hspace{0.76\linewidth}
+	\includegraphics[width=0.25\linewidth]{image}	%trimming relative to image size!
 \end{figure}
 
 %---------------------------------------------------------------------------------------
@@ -355,13 +370,12 @@
 %----------------------------------------------------------------------------------------
 
 \vspace{-130pt}
-\metasection{Tel:}{+90 (536) 701 50 98 }
-\metasection{E-posta:}{doganrabia477@gmail.com} 
-\metasection{Adres:}{Kuruçeşme Mahallesi 203/33 Sokak No:10 Daire:5 İzmir/Buca}
-\metasection{Doğum Tarihi:}{06/06/1998}
+\metasection{Tel:}{+90 (533) 462 88 84}
+\metasection{E-posta:}{mail@gmail.com} 
+\metasection{Adres:}{Adres}
+\metasection{Doğum Tarihi:}{Tarih}
 \metasection{Diller}{İngilizce}
-\metasection{Topluluklar}{Deu Robot Topluluğu, EGİAD Gençlik Komisyonu,Yaren Kooperatif, Vehbi Koç Vakfı}
-\metasection{Hobiler}{Kitap Okumak, Müzik Dinlemek, Elektronik Projeler, Dağ yürüyüşleri}
+\metasection{Hobiler}{Hobiler}
 
 
 %---------------------------------------------------------------------------------------
@@ -369,7 +383,7 @@
 %----------------------------------------------------------------------------------------
 
 \cvsection{Hakkımda}\\
- Lisans eğitimi aldığım dönem boyunca kendimi hem sosyal hem teknik açıdan geliştirdim. Hiç bitmek bilmeyen merak duygum beni her zaman bir adım daha ileriye götürdü. Bir çok toplulukta yer almakla beraber edindiğim sorumluluklar son 1 yıldır aktif olarak yer aldığım yarı zamanlı çalışma serüvenimle gitgide katlandı. Yazılıma olan ilgim gün geçtikçe arttı. Gömülü sistemler hayatın her bir parçasına çok iyi oturduğunu düşündüğüm için merakım ve ilgi odağım zamanla bu yöne kaydı. Çözüm odaklı bakış açım, ekip içi çalışma düzenim ve uyumum sayesinde baş edemeyeceğim problem olmayacağını düşünüyorum. Gelişime her daim açık ve aç olacağımdan eminim. 
+Ön Yazı
 \\[-2pt]
 
 %============================================================================%
@@ -384,11 +398,11 @@
 \cvsection{Deneyimler}
 
 %
-\cvevent{2020-Devam Ediyor}{Yazılım Mühendisi}{Nucleo Ar-Ge}{Yarı Zamanlı olarak Nucleo firması adına Vestel Elektronik Yenilikçi Teknolojiler alt grubunda gömülü yazılım mühendisi olarak görev almaktayım. Ayrıca grupiçi proje yazımlarında da görev almaktayım.}
+\cvevent{2018-Devam Ediyor}{Otomotiv Sistem Tasarımı Grup Müdürü}{Vestel Elektronik}{Açıklama}
 
-\cvevent{2019/08}{Stajyer}{TUBİTAK UME}{Empedans Laboratuvarında yaz dönemi stajımı tamamladım. Staj dönemim boyunca indüktif gerilim bölücü tasarladım. Ayrıca Üzerinde çalıştıkları Avrupa projesinde Wheatstone  Köprüsü ile tasarladıkları sistemin yazılımsal optimizasyonu üzerinde çalıştım.}
+\cvevent{2001-2018}{STB Donanım Grup Müdürü}{Vestel Elektronik}{Açıklama}
 
-\cvevent{2017-2019}{Garson}{Mihenk Düğün\&Davet Organizasyon}{Yaz aylarında İzmir'de bulunan bazı düğün salonlarında Garson Şefi ve Garson olarak Çalıştım.}
+\cvevent{1995-2001}{AR\&GE Müdürü}{Klemsan}{Açıklama}
 
 \vspace{5pt}
 %\textcolor{softcol}{\hrule}
@@ -399,9 +413,8 @@
 \cvsection{Akademik Hayatı}
 %
 
-\cvevent{2016 - 2021}{Dokuz Eylül Üniversitesi}{Elektrik-Elektronik Mühendisliği}{Not Ortalaması:2.94/4.0}
-
-\cvevent{2012-2016}{Adana Ticaret Odası Anadolu Lisesi}{}{Not Ortalaması:91.93/100.0}
+\cvevento{2007-2009}{Bilkent Üniversitesi}{MBA}{}{}
+\cvevento{1988-1992}{Selçuk Üniversitesi}{Elektronik Mühendisliği}
 
 \vspace{5pt}
 
@@ -409,12 +422,14 @@
 
 \cvsection{Yetenekler}
 
-\textbf{Proglamlama Dilleri}\\
-C, Python\\
-\textbf{Bilgisayar Programları}\\
-MATLAB, Octave, LabVIEW, Quite Universal Circuit Simulator (QUCS), Kicad, Ltspice, Intel Artera Quartus, Mentor Graphics Xpedition,Git,Latex\\
-\textbf{Mikro Denetleyiciler}\\
-Raspberry Pi, STM32 Series, STM8 Series, TI MSP430 Series, TI CC13xx and CC26xx, TI CC2640, TI AM335x\\
+\textbf{Sektör Bilgisi}\\
+Açıklama\\
+\textbf{Araçlar ve Teknoloji}\\
+C, C++, RTOS, Gömülü Linuz, Gömülü Yazılım, Gömülü Sistemler, IPTV \\
+\textbf{Sosyal Yetenekler}\\
+Mühendislik Yönetimi, Takım Yönetimi, Takım Liderliği\\
+\textbf{Diğer Yetenekler}\\
+H.264, DVB, MPEG, Mikroişlemciler, Zigbee, Akıllı Evler, Otomotiv Elektroniği, Elektronik Donanım Tasarımı\\
 \vspace{5pt}
 
 %-------------------------------------------------------------------------------------------------
@@ -423,44 +438,32 @@ Raspberry Pi, STM32 Series, STM8 Series, TI MSP430 Series, TI CC13xx and CC26xx,
 %---------------------------------------------------------------------------------------
 %Project SECTION
 %--------------------------------------------------------------------------------------
-\cvsection{Projeler \& Etkinlikler}
+\newpage
+\cvsection{Patentler}
 
-\cvevent{2021}{TEYDEB-Akıllı Ayna Jest Algılama}{Vestel Elektronik}{Projenin amacı akıllı aynalara jest tanıma özelliği kazandırmaktır.}
+\patent{2011}{Dokunmatik Kontrol Özellikli Ekran}{}{Bir adet vericinin yanına konumlandırılmış olarak, kızıl ötesi vericileri aktive eden en az bir tarama aracı, alıcıların sinyal seviyesini tespit etmektedir. Ekran parametrelerinin ayarı için kullanılan ekran menüsünü de aktif hale getirmektedir. Engel ekrana yakın olduğunda ve engel ekranla temas halinde olduğunda tespit edilen sinyal seviyesine göre engelin pozisyonu tespit edilir.}{}
 
-\cvevent{2020}{Covid Tracker}{Vestel Elektronik}{Projenin amacı, Covid-19 kapsamında Vestel City çalışanlarının güvenliğini sağlamak için bir akıllı takip sisteminin tasarlanmasıdır.}{}
-\cvevent{2020}{İş Gençlik'te Girişimcilik Projesi}{İZİKAD}{ Hedefimiz üniversiteye hazırlanan kız öğrencilere yönelik mentor - menti mobil uygulaması geliştirmek ve çalışan mühendis kadınları ve mühendislik okuyan kadın öğrencileri lisedeki arkadaşlarımızla bir araya getirmek hedefi taşımaktadır.}
+\patent{2010}{Görüntüleme Cihazları için Test Sistemi ve Yöntemi}{}{Televizyon, DVD, DVB gibi video çıkış cihazlarının ve cihazların tasarım aşamasında oluşabilecek makro blokaj, çerçeve atlama ve görüntü veri kaybı gibi belirli problemlerin tespiti ile ilgilidir.}{}
+\patent{2010}{Daha Düşük Bekleme Gücü Tüketimi için Giriş Algılama Cihazı}{}{açıklama}{}
+\patent{2009}{Bekleme Modunda Güç Tüketimini Azaltmak için Sistem ve Yöntem}{}{Elektronik cihaz tarafından normal çalışma koşulları altında tüketilen enerji, mevcut buluşa göre ana şebeke kaynağı tarafından sağlanır. Bekleme modu sırasında, yalnızca kullanıcı tarafından iletilen herhangi bir etkinleştirme sinyalini algılayacak olan elektronik bileşenler çalışır durumda tutulur.}{}
+\patent{2007}{Taşınabilir Mikroislemci Kontrollü Para Sayma, Para Küpürü Tanıma/Ayırma ve Sahte Para Yakalama Cihazı}{}{Her türlü paranın sayımı, para küpürlerinin sayım esnasında tanınarak ayrılması ve sayım esnasında sahtelik kontrolü gereksinimlerini karşılamak amacıyla tasarlanmıştır.}{}
 
-\cvevent{2020}{Kodlama Alt Birimi Etkinlik Sorumlusu}{Yaren Kooperatif}{9-13 yaş arası çocuklara kodlamayı aşılamak amacıyla yapılmış sosyal sorumluluk projesidir.}
-
-\cvevent{2019}{Topluluk Görevlisi}{DEU Robot Topluluğu}{Renesas MCU Rally Takım liderliği, Topluluk Denetim Kurulu Başkanlığı, Topluluk Yönetim Kurulu Üyeliği gibi görevlerde yer aldım.}{}
-
+\patent{2000}{Tren Rayına Takılabilen Mikroişlemci Kontrollü Güç Kaynağı}{}{Doğru gerilim güç ihtiyacı duyulan her makine ve elektrik panosunda kullanılabilecek üzerinde merkezi mikroişlemci kontrolü ile fiziksel ve elektriksel korumaları olan "PushPull anahtarlamalı" modda çalışan yüksek verimli bir güç kaynağı ile ilgilidir.}{}
+\patent{2000}{Klembus Haberleşme Protokolü Operatör Paneli.}{}{Özel protokol üzerinden haberleşen operatör panelidir.}{}
 \vspace{5pt}
-%--------------------------
-%Project SECTION
-%--------------------------------------------------------------------------------------
-\cvsection{Sertifikalar \& Ödüller}
+\cvsection{Yayınlar}
 
-\cvevento{2021}{RENESAS-MCU Car Rally Europe}{1.'lik/2.'lik}{}{}
+\patent{2012}{Dokunmatik Ekran OLED TV için Yeni Yöntem}{}{Açıklama}{}
+\patent{2012}{Dokunmatik Özelikli AM-OLED Ekranlar için Alternatif Kontrol Yöntemi ve Testleri }{}{Ultraince tasarımlarda dokunmatik problemini görüntü kalitesini düşürmeden sağlayan yaklaşım sensörleri ile yapılması}\\
+\patent{2011}{Parmak Yakınlık Tespiti Kullanarak Dokunmatik Ekran OLED TV Geliştirme Yöntemi}{}{Bilgi görüntüleme teknolojisinin gelişmesiyle birlikte son zamanlarda düz panel ekran (FPD) teknolojisi hız kazanmıştır. Organik ışık yayan diyot (OLED) teknolojisi, FPD arasında yapılan son araştırmadır. Daha önce hem dokunmatik ekranlı hem de aleve dayanıklı TV'ler Vestel firması tarafından LCD konseptinde tasarlanıyordu. Bu yazıda dokunmatik ekranlı OLED TV yapısının nasıl kurulduğu anlatılmaktadır.}\\
+%\cvevent{20}{}{}\\
+%\cvevent{20}{}{}
+\vspace{5pt}
 
-\cvevento{2020}{İZİKAD-İş Gençlik'te Yarışması}{Mansiyon Ödülü}{}{}
 
-\cvevento{2019}{IZTECH-Fikir Yarışması}{2.'lik Ödülü}{}{}
-
-\cvevento{2018}{Diksiyon ve Hitabet Sertifikası}{..}
-
-%\cvevento{2018}{Diksiyon ve Hitabet Sertifikası}{..}
-
-\cvevento{2016}{İşaret Dili Sertifikası}{}
-\cvsection{Referanslar}
-
-\cveventi{Barbaros KİRİŞKEN}{Vestel Elektronik-Yenilikçi Teknolojiler Ekip Müdürü}{}{Tel: +90 236 233 01 31}{E-posta: barbaros.kirisken@vestel.com.tr}
-\cveventi{Gülay GÜLMEZ}{TÜBİTAK UME'de Araştırmacı}{}{Tel: +90(507) 486 04 97}{E-posta: gulay.gulmez@tubitak.gov.tr}
-\cveventi{Enis TURHAN}{TÜBİTAK UME'de Araştırmacı}{}{Tel: +90(532) 300 68 48}{E-posta: enis.turhan@tubitak.gov.tr}
-\cveventi{Özgür TAMER}{Dokuz Eylül Üniversitesi-Dr. Öğr. Üyesi}{}{Tel: +90 232 301 71 82}{E-posta: ozgur.tamer@deu.edu.tr}
-\null
 \vspace{77pt}
 %\vspace*{\fill}
-\hspace{-0.25\linewidth}\colorbox{bgcol}{\makebox[1.5\linewidth][c]{\mystrut \small \textcolor{white}{\href{https://www.linkedin.com/in/rabia-dogan-965439155/}{LinkedIn}} $\cdot$ \textcolor{white}{\href{https://github.com/rabikkk}{Github}}}}
+%\hspace{-0.25\linewidth}\colorbox{bgcol}{\makebox[1.5\linewidth][c]{\mystrut \small \textcolor{white}{\href{https://www.linkedin.com/in/rabia-dogan-965439155/}{LinkedIn}} $\cdot$ \textcolor{white}{\href{https://github.com/rabikkk}{Github}}}}
 
 
 

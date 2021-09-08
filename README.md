@@ -30,7 +30,7 @@ Now with support for Chinese, Japanese and Korean character encoding. Setup is o
 <table>
     <tr>
        	<th>My_CV</th>
-       	<th>More coming soon...</th>
+       	<th>My_CV</th>
     </tr>
     	<tr>	
     		<td width="50%">
@@ -45,14 +45,6 @@ Now with support for Chinese, Japanese and Korean character encoding. Setup is o
 </table>
 
 </div>
-
-**Great first impression**
-
-Point out with a progressive layout. Give decision makers and HR only the most important information about you on one single page.
-
-**Beginner friendly**
-
-Pick a template, replace the content, compile, done. If that's not enough you can easily customize colors, fonts and layout. The templates are documented directly in the code. 
 
 **Minimal environment**
 
@@ -87,25 +79,4 @@ This repo also contains a `texlive.profile` file in the project root, that can b
 
 **Contributors are very welcome**. You want to contribute? Awesome! Please check the [contribution guidelines](https://github.com/jankapunkt/latexcv/blob/master/CONTRIBUTING.md) first to make it a success.
 
-
-## License
-
-The MIT License (MIT)
-
-Copyright (c) 2014-2019 Jan Küster
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-	
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-THE SOFTWARE.
 

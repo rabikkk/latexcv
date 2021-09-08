@@ -39,8 +39,4 @@ Build instructions
 - Run the main.tex and build with a LaTeX environment of your choice.
 
 
-Credits
--------
-
-Jan Küster
-www.jankuester.com
+Projeyi tamamen MIT licence'lı bir projeden alıp kendime uygun bir şekilde evirdim.

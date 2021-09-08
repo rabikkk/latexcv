@@ -34,7 +34,7 @@ Now with support for Chinese, Japanese and Korean character encoding. Setup is o
     </tr>
     	<tr>	
     		<td width="50%">
-    			<img src="docs/media/My_cv/Rabia_DOGAN_Özgeçmiş-1.png"
+    			<img src="docs/media/My_cv/Rabia_DOGAN_Özgeçmiş/Rabia_DOGAN_Özgeçmiş-1.png"
     				alt="My CV example preview" />
     		</td>
     		<td width="50%">
@@ -49,7 +49,7 @@ Now with support for Chinese, Japanese and Korean character encoding. Setup is o
     </tr>
     	<tr>	
     		<td width="50%">
-    			<img src="docs/media/My_cv/Rabia_DOGAN_Özgeçmiş-2.png"
+    			<img src="docs/media/My_cv/Rabia_DOGAN_Özgeçmiş/Rabia_DOGAN_Özgeçmiş-2.png"
     				alt="My CV example preview" />
     		</td>
     		<td width="50%">

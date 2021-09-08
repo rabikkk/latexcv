@@ -29,13 +29,13 @@ Now with support for Chinese, Japanese and Korean character encoding. Setup is o
 <div align="center">
 <table>
     <tr>
-       	<th>Sidebar Left</th>
+       	<th>My_CV</th>
        	<th>More coming soon...</th>
     </tr>
     	<tr>	
     		<td width="50%">
-    			<img src="docs/media/sidebarleft.png"
-    				alt="Left sidebar CV example preview" />
+    			<img src="docs/media/Rabia_DOGAN_Özgeçmiş-1.png"
+    				alt="My CV example preview" />
     		</td>
     		<td width="50%">
     			<h4>Your idea for a new template.</h4>

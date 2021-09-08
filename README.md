@@ -38,25 +38,12 @@ Now with support for Chinese, Japanese and Korean character encoding. Setup is o
     				alt="My CV example preview" />
     		</td>
     		<td width="50%">
-    			<h4>Your idea for a new template.</h4>
-            </td>    	
-    	</tr>
-</table>
-	<table>
-    <tr>
-       	<th>My_CV</th>
-       	<th>More coming soon...</th>
-    </tr>
-    	<tr>	
-    		<td width="50%">
-    			<img src="docs/media/My_cv/Rabia_DOGAN_Özgeçmiş/Rabia_DOGAN_Özgeçmiş-2.png"
+    			    			<img src="docs/media/My_cv/Rabia_DOGAN_Özgeçmiş/Rabia_DOGAN_Özgeçmiş-2.png"
     				alt="My CV example preview" />
-    		</td>
-    		<td width="50%">
-    			<h4>Your idea for a new template.</h4>
             </td>    	
     	</tr>
 </table>
+
 </div>
 
 **Great first impression**
